@@ -10,12 +10,12 @@
 
 		<jta-data-source>java:jboss/datasources/AdminDS</jta-data-source>
 
-		<class>jee.reference.model.Address</class>
-		<class>jee.reference.model.Person</class>
-		<class>jee.reference.model.CreditCard</class>
-		<class>jee.reference.model.DrivingLicence</class>
-		<class>jee.reference.model.Passport</class>
-		<class>jee.reference.model.Car</class>
+		<class>spring.reference.model.Address</class>
+		<class>spring.reference.model.Person</class>
+		<class>spring.reference.model.CreditCard</class>
+		<class>spring.reference.model.DrivingLicence</class>
+		<class>spring.reference.model.Passport</class>
+		<class>spring.reference.model.Car</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 

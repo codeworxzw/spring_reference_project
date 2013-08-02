@@ -1,0 +1,5 @@
+package spring.reference.meta;
+
+public enum TODOTag {
+    UNACCESSABLE, UNTESTED, MAY_CHANGE_IN_THE_FUTURE, MISSING_FEATURE, JMS_2, INTERCEPTORS_1_1, JPA_2_1, JAXRS_2_0;
+}
