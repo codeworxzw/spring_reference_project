@@ -2,9 +2,7 @@ package jee.reference.service.drools;
 
 import java.io.StringReader;
 
-import javax.enterprise.context.ApplicationScoped;
-
-import jee.reference.util.Logged;
+import javax.inject.Named;
 
 import org.drools.agent.KnowledgeAgent;
 import org.drools.agent.KnowledgeAgentFactory;
@@ -17,8 +15,10 @@ import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.logger.KnowledgeRuntimeLoggerFactory;
 import org.drools.runtime.StatelessKnowledgeSession;
 
+import spring.reference.util.Logged;
+
 @Logged
-@ApplicationScoped
+@Named
 public class DroolsStaticService {
     public KnowledgeBuilder createNewKnowledgeBuilder() {
         return KnowledgeBuilderFactory.newKnowledgeBuilder();

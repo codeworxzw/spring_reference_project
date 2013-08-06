@@ -4,11 +4,8 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-
-import jee.reference.exception.InternalServerErrorException;
-import jee.reference.util.Logged;
+import javax.inject.Named;
 
 import org.drools.KnowledgeBase;
 import org.drools.builder.KnowledgeBuilder;
@@ -17,8 +14,11 @@ import org.drools.builder.ResourceType;
 import org.drools.io.Resource;
 import org.slf4j.Logger;
 
+import spring.reference.exception.InternalServerErrorException;
+import spring.reference.util.Logged;
+
 @Logged
-@ApplicationScoped
+@Named
 public class LocalStatelessKnowledgeSessionService extends StatelessKnowledgeSessionService {
     @Inject
     private Logger logger;

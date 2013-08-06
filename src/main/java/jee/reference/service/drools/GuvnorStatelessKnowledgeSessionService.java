@@ -3,17 +3,8 @@ package jee.reference.service.drools;
 import java.util.List;
 
 import javax.annotation.PreDestroy;
-import javax.ejb.Lock;
-import javax.ejb.LockType;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-
-import jee.reference.exception.InternalServerErrorException;
-import jee.reference.meta.POI;
-import jee.reference.meta.POITag;
-import jee.reference.meta.TODO;
-import jee.reference.meta.TODOTag;
-import jee.reference.util.Logged;
+import javax.inject.Named;
 
 import org.drools.KnowledgeBase;
 import org.drools.agent.KnowledgeAgent;
@@ -30,9 +21,16 @@ import org.drools.io.Resource;
 import org.drools.io.ResourceChangeScannerConfiguration;
 import org.slf4j.Logger;
 
+import spring.reference.exception.InternalServerErrorException;
+import spring.reference.meta.POI;
+import spring.reference.meta.POITag;
+import spring.reference.meta.TODO;
+import spring.reference.meta.TODOTag;
+import spring.reference.util.Logged;
+
 @TODO(tags = { TODOTag.UNACCESSABLE, TODOTag.UNTESTED })
 @Logged
-@ApplicationScoped
+@Named
 public class GuvnorStatelessKnowledgeSessionService extends StatelessKnowledgeSessionService implements KnowledgeAgentEventListener {
     @Inject
     private Logger logger;
@@ -105,7 +103,6 @@ public class GuvnorStatelessKnowledgeSessionService extends StatelessKnowledgeSe
     }
 
     @Override
-    @Lock(LockType.READ)
     public void executeInStatelessKnowledgeSession(List<Object> factList) throws InternalServerErrorException {
         makeSureDroolsIsInitialized();
         getStatelessKnowledgeSession().execute(factList);

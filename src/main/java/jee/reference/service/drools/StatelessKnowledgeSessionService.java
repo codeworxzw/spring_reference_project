@@ -2,10 +2,10 @@ package jee.reference.service.drools;
 
 import java.util.List;
 
-import jee.reference.exception.InternalServerErrorException;
-
 import org.drools.logger.KnowledgeRuntimeLogger;
 import org.drools.runtime.StatelessKnowledgeSession;
+
+import spring.reference.exception.InternalServerErrorException;
 
 public abstract class StatelessKnowledgeSessionService {
     private StatelessKnowledgeSession statelessKnowledgeSession;

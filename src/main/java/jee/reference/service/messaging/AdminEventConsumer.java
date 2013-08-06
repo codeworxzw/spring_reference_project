@@ -3,18 +3,16 @@ package jee.reference.service.messaging;
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
-import jee.reference.interceptor.LoggingInterceptor;
-import jee.reference.meta.POI;
-import jee.reference.meta.POITag;
-import jee.reference.util.Logged;
-
 import org.slf4j.Logger;
+
+import spring.reference.meta.POI;
+import spring.reference.meta.POITag;
+import spring.reference.util.Logged;
 
 @Logged
 @MessageDriven(mappedName = "AdminEventConsumer", activationConfig = {
@@ -23,7 +21,6 @@ import org.slf4j.Logger;
     @ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/admin") })
 @POI(tags = { POITag.UNEXPECTED_BEHAVIOUR, POITag.STRANGE_BEHAVIOUR },
     value = "According to specification MDBs should be intercepted by CDI, but they aren't. EJB interceptor works.")
-@Interceptors({ LoggingInterceptor.class })
 public class AdminEventConsumer implements MessageListener {
 
     @Inject

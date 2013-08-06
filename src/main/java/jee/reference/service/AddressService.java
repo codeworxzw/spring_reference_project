@@ -11,8 +11,11 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 
 import spring.reference.model.Address;
+import spring.reference.model.Address_;
 import spring.reference.model.Passport;
+import spring.reference.model.Passport_;
 import spring.reference.model.Person;
+import spring.reference.model.Person_;
 import spring.reference.util.Logged;
 
 @Logged

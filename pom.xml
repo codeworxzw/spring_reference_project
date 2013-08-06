@@ -43,10 +43,30 @@
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.0.2.Final</version>
 		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>knowledge-api</artifactId>
+			<version>5.5.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+			<version>3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>javax.jms-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>1.2.0.Final</version>
+		</dependency>
 	</dependencies>
 
 	<build>
-		<finalName>jee_reference_project</finalName>
+		<finalName>spring_reference_project</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>

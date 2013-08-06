@@ -1,7 +1,7 @@
 package jee.reference.service.messaging;
 
 import javax.annotation.Resource;
-import javax.ejb.Stateless;
+import javax.inject.Named;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
@@ -10,13 +10,13 @@ import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
-import jee.reference.meta.JBOSS_AS7;
-import jee.reference.meta.TODO;
-import jee.reference.meta.TODOTag;
-import jee.reference.util.Logged;
+import spring.reference.meta.JBOSS_AS7;
+import spring.reference.meta.TODO;
+import spring.reference.meta.TODOTag;
+import spring.reference.util.Logged;
 
 @Logged
-@Stateless
+@Named
 public class MessagingService {
     @JBOSS_AS7
     @Resource(mappedName = "java:/JmsXA")

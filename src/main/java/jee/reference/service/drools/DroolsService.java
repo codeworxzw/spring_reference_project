@@ -3,18 +3,18 @@ package jee.reference.service.drools;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
-import jee.reference.exception.InternalServerErrorException;
-import jee.reference.meta.NOTE;
-import jee.reference.meta.NOTETag;
-import jee.reference.meta.TODO;
-import jee.reference.meta.TODOTag;
-import jee.reference.util.Logged;
+import spring.reference.exception.InternalServerErrorException;
+import spring.reference.meta.NOTE;
+import spring.reference.meta.NOTETag;
+import spring.reference.meta.TODO;
+import spring.reference.meta.TODOTag;
+import spring.reference.util.Logged;
 
 @Logged
-@ApplicationScoped
+@Named
 public class DroolsService {
     @Inject
     private LocalStatelessKnowledgeSessionService localStatelessKnowledgeSessionService;
