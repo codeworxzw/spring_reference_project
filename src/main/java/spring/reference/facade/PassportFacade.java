@@ -1,10 +1,10 @@
-package jee.reference.facade;
+package spring.reference.facade;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import jee.reference.service.PassportService;
 import spring.reference.model.Passport;
+import spring.reference.service.PassportService;
 
 @Named
 public class PassportFacade {

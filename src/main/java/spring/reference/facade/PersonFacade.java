@@ -1,16 +1,16 @@
-package jee.reference.facade;
+package spring.reference.facade;
 
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import jee.reference.service.RetryOnOptimisticLockException;
-import jee.reference.service.api.PersonService;
 import spring.reference.exception.RecordNotFoundException;
 import spring.reference.exception.RestClientCallException;
 import spring.reference.model.Person;
 import spring.reference.model.dto.PersonDto;
+import spring.reference.service.RetryOnOptimisticLockException;
+import spring.reference.service.api.PersonService;
 import spring.reference.util.Logged;
 
 @Logged

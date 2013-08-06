@@ -1,4 +1,4 @@
-package jee.reference.service.drools;
+package spring.reference.service.drools;
 
 import org.drools.SystemEventListener;
 

@@ -1,4 +1,4 @@
-package jee.reference.service;
+package spring.reference.service;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

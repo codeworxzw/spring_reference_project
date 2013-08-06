@@ -1,4 +1,4 @@
-package jee.reference.service;
+package spring.reference.service;
 
 import javax.inject.Named;
 import javax.persistence.EntityManager;

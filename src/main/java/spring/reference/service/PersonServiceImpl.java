@@ -1,4 +1,4 @@
-package jee.reference.service;
+package spring.reference.service;
 
 import java.util.List;
 
@@ -13,9 +13,6 @@ import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-import jee.reference.service.api.PersonService;
-import jee.reference.service.decision.PersonDecisionBean;
-import jee.reference.service.messaging.MessagingService;
 
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
@@ -28,6 +25,9 @@ import spring.reference.meta.TODOTag;
 import spring.reference.model.Person;
 import spring.reference.model.Person_;
 import spring.reference.model.dto.PersonDto;
+import spring.reference.service.api.PersonService;
+import spring.reference.service.decision.PersonDecisionBean;
+import spring.reference.service.messaging.MessagingService;
 import spring.reference.util.Logged;
 
 @TODO(tags = { TODOTag.JAXRS_2_0 }, value = "Use JAX-RS Client API instead of (deprecated) resteasy specific components.")

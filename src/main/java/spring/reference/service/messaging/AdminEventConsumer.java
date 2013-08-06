@@ -1,4 +1,4 @@
-package jee.reference.service.messaging;
+package spring.reference.service.messaging;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;

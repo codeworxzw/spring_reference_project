@@ -1,4 +1,4 @@
-package jee.reference.service.decision;
+package spring.reference.service.decision;
 
 import javax.inject.Named;
 

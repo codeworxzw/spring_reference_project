@@ -1,4 +1,4 @@
-package jee.reference.service.api;
+package spring.reference.service.api;
 
 import java.util.List;
 
