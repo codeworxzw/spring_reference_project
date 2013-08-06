@@ -13,7 +13,6 @@ import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
 import org.springframework.beans.factory.annotation.Value;
@@ -83,8 +82,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person updatePerson(Long personId, Person person) {
-        person.setId(personId);
+    public Person updatePerson(Person person) {
         Person updatedPerson = entityManager.merge(person);
 
         return updatedPerson;

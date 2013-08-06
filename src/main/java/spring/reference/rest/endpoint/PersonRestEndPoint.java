@@ -47,7 +47,7 @@ public class PersonRestEndPoint {
     @RequestMapping(value = "/{personId}", method = RequestMethod.PUT)
     public @ResponseBody
     Person updatePerson(@PathVariable("personId") Long personId, @RequestBody Person person) {
-        return personFacade.updatePerson(personId, person);
+        return personFacade.updatePerson(person);
     }
 
     @RequestMapping(value = "/data", method = RequestMethod.GET)
@@ -81,8 +81,9 @@ public class PersonRestEndPoint {
     @RequestMapping(value = "/qnd/{personId}/{firstName}", method = RequestMethod.GET)
     public Person qndUpdatePerson(@PathVariable("personId") Long personId, @PathVariable("firstName") String firstName) {
         Person person = new Person();
+        person.setId(personId);
         person.setFirstName(firstName);
 
-        return personFacade.updatePerson(personId, person);
+        return personFacade.updatePerson(person);
     }
 }
