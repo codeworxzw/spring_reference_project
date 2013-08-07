@@ -70,7 +70,8 @@ public class PersonRestEndPoint {
 
     @QND
     @RequestMapping(value = "/qnd/{firstName}", method = RequestMethod.GET)
-    public Long qndCreatePerson(@PathVariable("firstName") String firstName) {
+    public @ResponseBody
+    Long qndCreatePerson(@PathVariable("firstName") String firstName) {
         Person person = new Person();
         person.setFirstName(firstName);
 
@@ -79,7 +80,8 @@ public class PersonRestEndPoint {
 
     @QND
     @RequestMapping(value = "/qnd/{personId}/{firstName}", method = RequestMethod.GET)
-    public Person qndUpdatePerson(@PathVariable("personId") Long personId, @PathVariable("firstName") String firstName) {
+    public @ResponseBody
+    Person qndUpdatePerson(@PathVariable("personId") Long personId, @PathVariable("firstName") String firstName) {
         Person person = new Person();
         person.setId(personId);
         person.setFirstName(firstName);

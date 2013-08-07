@@ -58,7 +58,7 @@ public class LoggingAspect {
 
             return retValue;
         } catch (Throwable e) {
-            logger.debug(methodName + "FAILED");
+            logger.warn(methodName + "FAILED");
             throw e;
         }
     }

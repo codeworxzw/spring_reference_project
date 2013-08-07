@@ -30,9 +30,9 @@ import spring.reference.util.Logged;
 public class RuleEngineRestEndPoint {
     @Inject
     private DroolsService droolsService;
+
     @POI(tags = { POITag.USEFUL }, value = "Able to copy one POJO to another.")
-    @Inject
-    private ModelMapper modelMapper;
+    private ModelMapper modelMapper = new ModelMapper();
 
     @QND
     @RequestMapping(value = "/qnd/{firstName}/{deleted}", method = RequestMethod.GET)

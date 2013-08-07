@@ -16,6 +16,7 @@ import javax.persistence.criteria.Root;
 import org.jboss.resteasy.client.ClientRequest;
 import org.jboss.resteasy.client.ClientResponse;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.transaction.annotation.Transactional;
 
 import spring.reference.exception.RecordNotFoundException;
 import spring.reference.exception.RestClientCallException;
@@ -32,6 +33,7 @@ import spring.reference.util.Logged;
 @TODO(tags = { TODOTag.JAXRS_2_0 }, value = "Use JAX-RS Client API instead of (deprecated) resteasy specific components.")
 @Logged
 @Named
+@Transactional
 public class PersonServiceImpl implements PersonService {
     @PersistenceContext(unitName = "admin")
     private EntityManager entityManager;

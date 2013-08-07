@@ -20,6 +20,7 @@
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>
+		    <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy" />
 		    <property name="hibernate.connection.charSet" value="UTF-8" />
@@ -34,6 +35,9 @@
 			<!-- Cache -->
             <property name="hibernate.cache.use_second_level_cache" value="false" />
             <property name="hibernate.cache.use_query_cache" value="false" />
+            
+            <!-- Transaction -->
+            <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup" />
 		</properties>
 	</persistence-unit>
 </persistence>

@@ -1,8 +1,10 @@
 package spring.reference;
 
+import spring.reference.meta.COMMON;
 import spring.reference.meta.TODO;
 import spring.reference.meta.TODOTag;
 
+@COMMON
 public final class ApplicationTodo {
     private ApplicationTodo() {
     }

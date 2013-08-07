@@ -20,6 +20,7 @@ import org.drools.event.knowledgeagent.ResourceCompilationFailedEvent;
 import org.drools.io.Resource;
 import org.drools.io.ResourceChangeScannerConfiguration;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import spring.reference.exception.InternalServerErrorException;
 import spring.reference.meta.POI;
@@ -32,8 +33,8 @@ import spring.reference.util.Logged;
 @Logged
 @Named
 public class GuvnorStatelessKnowledgeSessionService extends StatelessKnowledgeSessionService implements KnowledgeAgentEventListener {
-    @Inject
-    private Logger logger;
+    private static final Logger LOGGER = LoggerFactory.getLogger(LocalStatelessKnowledgeSessionService.class);
+
     @Inject
     private DroolsStaticService droolsStaticService;
 
@@ -84,7 +85,7 @@ public class GuvnorStatelessKnowledgeSessionService extends StatelessKnowledgeSe
         try {
             rebuildKnowledgeBase();
         } catch (InternalServerErrorException e) {
-            logger.error("Couldn't rebuild knowledgebase!", e);
+            LOGGER.error("Couldn't rebuild knowledgebase!", e);
         }
     }
 
@@ -139,7 +140,7 @@ public class GuvnorStatelessKnowledgeSessionService extends StatelessKnowledgeSe
 
             String lastExceptionMessage = droolsSystemEventListener.getLastExceptionMessage();
 
-            logger.error("Drools exception occurred: {}", lastExceptionMessage);
+            LOGGER.error("Drools exception occurred: {}", lastExceptionMessage);
 
             throw new InternalServerErrorException(lastExceptionMessage, droolsSystemEventListener.getLastException());
         }

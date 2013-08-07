@@ -13,6 +13,7 @@ import org.drools.builder.KnowledgeBuilderError;
 import org.drools.builder.ResourceType;
 import org.drools.io.Resource;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import spring.reference.exception.InternalServerErrorException;
 import spring.reference.util.Logged;
@@ -20,8 +21,7 @@ import spring.reference.util.Logged;
 @Logged
 @Named
 public class LocalStatelessKnowledgeSessionService extends StatelessKnowledgeSessionService {
-    @Inject
-    private Logger logger;
+    private static final Logger LOGGER = LoggerFactory.getLogger(LocalStatelessKnowledgeSessionService.class);
     @Inject
     private DroolsStaticService droolsStaticService;
 
@@ -33,7 +33,7 @@ public class LocalStatelessKnowledgeSessionService extends StatelessKnowledgeSes
 
         if (knowledgeBuilder.hasErrors()) {
             for (KnowledgeBuilderError knowledgeBuilderError : knowledgeBuilder.getErrors()) {
-                logger.error(knowledgeBuilderError.getMessage());
+                LOGGER.error(knowledgeBuilderError.getMessage());
             }
             throw new IllegalStateException("Couldn't build Drools knowledgebase!");
         }

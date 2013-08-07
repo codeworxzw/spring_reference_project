@@ -38,10 +38,20 @@ import spring.reference.util.DateSerializer;
         + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
         + " ) FROM Person _person, DrivingLicence _drivingLicence, Passport _passport"
         + " WHERE _person.deleted = :deleted AND _drivingLicence.owner = _person AND _passport.owner = _person"),
+    // @NamedQuery(name = "Person.getAllPersonData", query = "SELECT NEW spring.reference.model.dto.PersonDto("
+    // + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
+    // + " ) FROM Person _person, DrivingLicence _drivingLicence, Passport _passport"
+    // + " WHERE _person.deleted = ?1 AND _drivingLicence.owner = _person AND _passport.owner = _person"),
     @NamedQuery(name = Person.NQ_GET_PERSON_DATA, query = "SELECT NEW spring.reference.model.dto.PersonDto("
         + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
         + " ) FROM Person _person LEFT OUTER JOIN _person.drivingLicence _drivingLicence LEFT OUTER JOIN _person.passport _passport"
-        + " WHERE _person.id = :personId"), })
+        + " WHERE _person.id = :personId")
+// ,
+// @NamedQuery(name = "Person.getPersonData", query = "SELECT NEW spring.reference.model.dto.PersonDto("
+// + " _person.firstName, _person.lastName, _person.dateOfBirth, _drivingLicence.documentId, _passport.documentId"
+// + " ) FROM Person _person LEFT OUTER JOIN _person.drivingLicence _drivingLicence LEFT OUTER JOIN _person.passport _passport"
+// + " WHERE _person.id = :personId")
+})
 @Entity
 @SequenceGenerator(name = "personIdSequenceGenerator", sequenceName = "SEQ_PERSON_ID", initialValue = 1, allocationSize = 10)
 public class Person {

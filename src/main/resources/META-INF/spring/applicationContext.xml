@@ -36,35 +36,50 @@
 		<context:exclude-filter expression="org.springframework.stereotype.Controller"
 			type="annotation" />
 	</context:component-scan>
-	
-	<jpa:repositories base-package="spring.reference.service.repository"/>
 
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
 	<jee:jndi-lookup id="adminDataSource" jndi-name="java:jboss/datasources/AdminDS"></jee:jndi-lookup>
-	<!--
-	<jdbc:initialize-database data-source="adminDataSource">
-        <jdbc:script location="classpath:path/to/sql" />
-    </jdbc:initialize-database>
-    -->
-    
-    <!--
+<!--
     <bean id="springDefinedDataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="${springDefinedDataSource.driverClassName}" />
-        <property name="url" value="${springDefinedDataSource.url}" />
-        <property name="username" value="${springDefinedDataSource.username}" />
-        <property name="password" value="${springDefinedDataSource.password}" />
-        <property name="connectionProperties" value="" />
+        <property name="driverClassName" value="${...}" />
+        <property name="url" value="${...}" />
+        <property name="username" value="${...}" />
+        <property name="password" value="${...}" />
+        <property name="connectionProperties" value="..." />
         <property name="defaultAutoCommit" value="false" />
     </bean>
-    -->
-
-	<tx:annotation-driven />
-	<tx:jta-transaction-manager />
+-->
 	
-	<aop:aspectj-autoproxy proxy-target-class="true" />
+<!--
+	<jdbc:initialize-database data-source="adminDataSource">
+        <jdbc:script location="classpath:..." />
+    </jdbc:initialize-database>
+-->
+    
+
+	<tx:annotation-driven proxy-target-class="true" transaction-manager="transactionManager"/>
+	<tx:jta-transaction-manager />
+<!--
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+-->
+
 
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="persistenceUnitName" value="admin" />
 		<property name="dataSource" ref="adminDataSource" />
+		
+<!--
+		<property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+            </bean>
+        </property>
+-->
 	</bean>
+    
+    <jpa:repositories base-package="spring.reference.service.repository"/>
 </beans>
