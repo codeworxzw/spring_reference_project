@@ -10,6 +10,8 @@ import javax.jms.Queue;
 import javax.jms.Session;
 import javax.jms.TextMessage;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import spring.reference.meta.JBOSS_AS7;
 import spring.reference.meta.TODO;
 import spring.reference.meta.TODOTag;
@@ -17,6 +19,7 @@ import spring.reference.util.Logged;
 
 @Logged
 @Named
+@Transactional
 public class MessagingService {
     @JBOSS_AS7
     @Resource(mappedName = "java:/JmsXA")

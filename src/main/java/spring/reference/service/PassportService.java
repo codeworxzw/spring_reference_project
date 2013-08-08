@@ -5,6 +5,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import spring.reference.meta.POI;
 import spring.reference.model.Passport;
 import spring.reference.model.Person;
@@ -12,6 +14,7 @@ import spring.reference.util.Logged;
 
 @Logged
 @Named
+@Transactional
 public class PassportService {
     @PersistenceContext(unitName = "admin")
     private EntityManager entityManager;

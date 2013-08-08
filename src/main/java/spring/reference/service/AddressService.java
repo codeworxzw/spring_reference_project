@@ -10,6 +10,8 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.Root;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import spring.reference.model.Address;
 import spring.reference.model.Address_;
 import spring.reference.model.Passport;
@@ -20,6 +22,7 @@ import spring.reference.util.Logged;
 
 @Logged
 @Named
+@Transactional
 public class AddressService {
     @PersistenceContext(unitName = "admin")
     private EntityManager entityManager;
