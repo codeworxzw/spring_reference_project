@@ -29,7 +29,7 @@ public class PersonRestEndPoint {
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
     List<Person> getAllPerson() {
-        return personFacade.getAllPersons();
+        return personFacade.getAllPerson();
     }
 
     @RequestMapping(value = "/{personId}", method = RequestMethod.GET)

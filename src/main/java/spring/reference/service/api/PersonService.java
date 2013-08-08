@@ -8,7 +8,7 @@ import spring.reference.model.Person;
 import spring.reference.model.dto.PersonDto;
 
 public interface PersonService {
-    List<Person> getAllPersons();
+    List<Person> getAllPerson();
 
     Person getPerson(Long personId) throws RecordNotFoundException;
 

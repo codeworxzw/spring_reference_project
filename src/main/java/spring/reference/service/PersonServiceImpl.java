@@ -50,7 +50,7 @@ public class PersonServiceImpl implements PersonService {
     private String path;
 
     @Override
-    public List<Person> getAllPersons() {
+    public List<Person> getAllPerson() {
         CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Person> query = criteriaBuilder.createQuery(Person.class);
         query.distinct(true);
@@ -93,7 +93,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<PersonDto> getAllPersonData() {
         Query query = entityManager.createNamedQuery(Person.NQ_GET_ALL_PERSON_DATA);
-        query.setParameter("deleted", false);
+        query.setParameter("deleted", 0L);
 
         @SuppressWarnings("unchecked")
         List<PersonDto> allPersonData = query.getResultList();
@@ -140,6 +140,7 @@ public class PersonServiceImpl implements PersonService {
         root.fetch(Person_.drivingLicence, JoinType.LEFT);
         root.fetch(Person_.cars, JoinType.LEFT);
         root.fetch(Person_.addresses, JoinType.LEFT);
+        root.fetch(Person_.creditCards, JoinType.LEFT);
 
         return root;
     }

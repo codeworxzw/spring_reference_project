@@ -37,7 +37,8 @@
 			type="annotation" />
 	</context:component-scan>
 
-	<aop:aspectj-autoproxy proxy-target-class="true" />
+<!-- 	<aop:aspectj-autoproxy proxy-target-class="true" /> -->
+	<context:load-time-weaver />
 	
 	<jee:jndi-lookup id="adminDataSource" jndi-name="java:jboss/datasources/AdminDS"></jee:jndi-lookup>
 <!--

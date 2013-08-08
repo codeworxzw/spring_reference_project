@@ -17,7 +17,6 @@ import spring.reference.service.RetryOnOptimisticLockException;
 @Named
 @Aspect
 public class RetryOnOptimisticLockExceptionAspect {
-
     @Around("@within(retryOnOptimisticLockExceptionAnnotation) || @annotation(retryOnOptimisticLockExceptionAnnotation)")
     public Object retryOnOptimisticLockAspect(ProceedingJoinPoint proceedingJoinPoint, RetryOnOptimisticLockException retryOnOptimisticLockExceptionAnnotation)
             throws Throwable {
