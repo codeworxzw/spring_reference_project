@@ -1,4 +1,4 @@
-package spring.reference.ext.drools.fact;
+package spring.reference.external.drools.fact;
 
 import spring.reference.meta.COMMON;
 

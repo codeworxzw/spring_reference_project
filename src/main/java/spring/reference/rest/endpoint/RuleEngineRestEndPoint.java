@@ -37,13 +37,13 @@ public class RuleEngineRestEndPoint {
     @QND
     @RequestMapping(value = "/qnd/{firstName}/{deleted}", method = RequestMethod.GET)
     public @ResponseBody
-    Set<spring.reference.ext.drools.fact.Person> qndRunRules(@PathVariable("firstName") String firstName, @PathVariable("deleted") Long deleted)
+    Set<spring.reference.external.drools.fact.Person> qndRunRules(@PathVariable("firstName") String firstName, @PathVariable("deleted") Long deleted)
             throws InternalServerErrorException {
         Person person = createPerson(firstName, deleted);
 
-        spring.reference.ext.drools.fact.Person personFact = convertToFact(person);
+        spring.reference.external.drools.fact.Person personFact = convertToFact(person);
 
-        Set<spring.reference.ext.drools.fact.Person> personFactSet = new HashSet<spring.reference.ext.drools.fact.Person>(Arrays.asList(personFact));
+        Set<spring.reference.external.drools.fact.Person> personFactSet = new HashSet<spring.reference.external.drools.fact.Person>(Arrays.asList(personFact));
         List<Object> factList = Arrays.asList(personFactSet, personFact);
 
         droolsService.executeInStatelessKnowledgeSession(factList);
@@ -67,11 +67,11 @@ public class RuleEngineRestEndPoint {
         return person;
     }
 
-    private spring.reference.ext.drools.fact.Person convertToFact(Person person) {
-        return modelMapper.map(person, spring.reference.ext.drools.fact.Person.class);
+    private spring.reference.external.drools.fact.Person convertToFact(Person person) {
+        return modelMapper.map(person, spring.reference.external.drools.fact.Person.class);
     }
 
-    private Person convertFromFact(spring.reference.ext.drools.fact.Person personFact) {
+    private Person convertFromFact(spring.reference.external.drools.fact.Person personFact) {
         return modelMapper.map(personFact, Person.class);
     }
 }

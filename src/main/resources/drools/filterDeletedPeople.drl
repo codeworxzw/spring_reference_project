@@ -1,4 +1,4 @@
-import spring.reference.ext.drools.fact.Person;
+import spring.reference.external.drools.fact.Person;
 import java.util.Set;
 
 rule "filterDeletedPeople"
