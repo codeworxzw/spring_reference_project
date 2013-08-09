@@ -13,7 +13,7 @@ Basically tries to accumulate concepts, ideas and corresponding solutions inspir
 
 There is an emphasis on pointing out important parts ([POI](#poi)): non-trivial/hard-to-remember solutions to problems, unintuitive or strange behaviour, some useful features which are likely to be unknown to most - or really anything that can be considered important when working on an application.
 
-The project itself has no purpose regarding functionality. It is buildable and deployable however. There's really no point in listing the features, what's interesting is the [Technologies](#technologies) that are being used in this project.
+The project itself has no purpose regarding functionality. It is buildable and deployable however. There's really no point in listing the features, what's interesting is the [technologies](#technologies) that are being used in this project.
 
 Technologies
 ------------
@@ -49,6 +49,7 @@ Technologies
 
 TODO technologies
 -----------------
+- Integration test using SpringJUnit4ClassRunner
 - Use Spring template for JMS message producer
 - Spring batch (JBatch)
 - UI
