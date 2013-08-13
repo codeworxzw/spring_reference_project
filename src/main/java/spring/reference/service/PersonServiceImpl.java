@@ -78,7 +78,7 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Long createPerson(Person person) {
         entityManager.persist(person);
-        messagingService.sendTextMessage("Person created (message sent as past of a transaction):" + person);
+        messagingService.sendTextMessage("Person created (message sent as part of a transaction):" + person);
 
         return person.getId();
     }
